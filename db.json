@@ -1,0 +1,10 @@
+{
+  "subscriptions": [
+    { "name": "Netflix", "price": 499, "status": "Active" },
+    { "name": "Spotify", "price": 199, "status": "Active" }
+  ],
+  "billing-history": [
+    { "name": "Netflix", "date": "2025-03-01", "amount": 499, "status": "Paid" },
+    { "name": "Spotify", "date": "2025-03-02", "amount": 199, "status": "Paid" }
+  ]
+}
