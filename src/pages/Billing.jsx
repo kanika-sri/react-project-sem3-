@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
 import BillingHistory from "../components/BillingHistory";
 import { Link } from "react-router-dom";
 
@@ -8,16 +7,37 @@ function Billing() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/billing-history")
-      .then(res => {
-        console.log("DATA:", res.data);
-        setData(res.data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.log("ERROR:", err);
-        setLoading(false);
-      });
+    // 🔥 DUMMY DATA
+    const dummyData = [
+      {
+        id: 1,
+        name: "Netflix",
+        date: "2025-03-01",
+        amount: 499,
+        status: "Paid"
+      },
+      {
+        id: 2,
+        name: "Spotify",
+        date: "2025-03-02",
+        amount: 199,
+        status: "Paid"
+      },
+      {
+        id: 3,
+        name: "Amazon Prime",
+        date: "2025-03-05",
+        amount: 299,
+        status: "Pending"
+      }
+    ];
+
+    // simulate loading
+    setTimeout(() => {
+      setData(dummyData);
+      setLoading(false);
+    }, 1000);
+
   }, []);
 
   return (
